@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern typing speed test with WPM, accuracy and live progress.">
+  <title>TypeFlow — Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">Type<span>Flow</span></a>
+    <nav>
+      <button class="nav-btn active" data-mode="test">Test</button>
+      <button class="nav-btn" data-mode="stats">Stats</button>
+    </nav>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">TYPING SPEED TEST</p>
+      <h1>Type faster. <span>Think sharper.</span></h1>
+      <p class="subtitle">Build speed, accuracy, and consistency with focused practice.</p>
+    </section>
+
+    <section class="controls">
+      <div class="control-group">
+        <span class="label">TIME</span>
+        <div class="segmented" id="timeOptions">
+          <button class="option" data-time="15">15s</button>
+          <button class="option active" data-time="30">30s</button>
+          <button class="option" data-time="60">60s</button>
+        </div>
+      </div>
+      <div class="control-group">
+        <span class="label">DIFFICULTY</span>
+        <div class="segmented" id="difficultyOptions">
+          <button class="option active" data-difficulty="easy">Easy</button>
+          <button class="option" data-difficulty="medium">Medium</button>
+          <button class="option" data-difficulty="hard">Hard</button>
+        </div>
+      </div>
+      <button class="restart" id="restartBtn" title="Restart test">↻ <span>Restart</span></button>
+    </section>
+
+    <section class="typing-card">
+      <div class="test-status">
+        <div><span class="status-dot"></span><span id="statusText">Ready</span></div>
+        <div class="timer"><span id="timer">30</span><small>s</small></div>
+      </div>
+
+      <div class="quote-wrap" id="quoteWrap" tabindex="0">
+        <div id="quote" class="quote" aria-label="Typing text"></div>
+        <textarea id="input" autocomplete="off" autocorrect="off" autocapitalize="off"
+          spellcheck="false" aria-label="Type the text here"></textarea>
+        <div class="caret" id="caret"></div>
+      </div>
+
+      <div class="hint">
+        <span>Start typing to begin</span>
+        <kbd>Tab</kbd><span>+</span><kbd>Enter</kbd><span>restart</span>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat"><span>WPM</span><strong id="wpm">0</strong></div>
+      <div class="stat"><span>ACCURACY</span><strong id="accuracy">100%</strong></div>
+      <div class="stat"><span>CHARACTERS</span><strong id="characters">0</strong></div>
+      <div class="stat"><span>ERRORS</span><strong id="errors">0</strong></div>
+    </section>
+
+    <section class="result" id="result">
+      <div>
+        <p class="eyebrow">TEST COMPLETE</p>
+        <h2 id="resultTitle">Nice run.</h2>
+        <p id="resultText">Keep practicing to improve your consistency.</p>
+      </div>
+      <button class="primary" id="resultRestart">Try again <span>↵</span></button>
+    </section>
+  </main>
+
+  <footer>TypeFlow <span>•</span> Practice makes progress.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
